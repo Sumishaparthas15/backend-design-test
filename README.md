@@ -2,16 +2,30 @@
 
 
 # Low-Level Design Test
-This repository contains my Django REST Framework implementation for the backend test.
+# 🌐 Translation API (Django + Celery + Redis)
 
-## Structure
-- `docs/api_spec.md` — API specifications
-- `docs/db_schema.sql` — Database schema
-- `code/` — Django app code
+This project provides a RESTful backend for handling translation jobs asynchronously using **Django REST Framework**, **Celery**, and **Redis**.  
+It supports **JWT authentication**, **rate limiting**, and **request validation**.
 
-## How to Run
-1. Create virtual environment  
-2. Install dependencies (`pip install -r requirements.txt`)  
-3. Run server (`python manage.py runserver`)
+---
+
+## 🚀 Features
+
+- Submit translation jobs asynchronously  
+- Fetch translation job status and translated results  
+- Celery worker integration with Redis  
+- JWT authentication for secure endpoints  
+- Rate limiting to prevent abuse  
+- Input validation and error handling  
+
+---
+
+## ⚙️ Setup
+
+### 1. Clone Repository
+
+```bash
+https://github.com/Sumishaparthas15/backend-design-test.git
+cd low_level_design 
 
 
