@@ -24,14 +24,14 @@ class TranslationJob(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='translation_jobs')
     source_text = models.TextField(blank=True, null=True)
-    source_file = models.FileField(upload_to='source_files/', blank=True, null=True)
+
     source_lang = models.CharField(max_length=10)
     target_lang = models.CharField(max_length=10)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
     priority = models.CharField(max_length=10, choices=PRIORITY_CHOICES, default='normal')
     word_count = models.IntegerField(default=0)
     translated_text = models.TextField(blank=True, null=True)
-    result_file = models.FileField(upload_to='translated_files/', blank=True, null=True)
+    
     error_message = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     started_at = models.DateTimeField(blank=True, null=True)
