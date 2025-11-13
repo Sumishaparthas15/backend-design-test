@@ -1,0 +1,1059 @@
+{
+	"info": {
+		"_postman_id": "d5544bb5-5426-478f-94ee-05e75a54da15",
+		"name": "backend testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33255970"
+	},
+	"item": [
+		{
+			"name": "Get Token (Login)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"sumisha\",\n  \"password\": \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/token/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Token (Login)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"sumisha\",\n  \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/token/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 13 Nov 2025 17:01:34 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "483"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2MzEzOTY5NCwiaWF0IjoxNzYzMDUzMjk0LCJqdGkiOiIxNDVkM2JjOTFiOGI0MDE5YmNiYzRkY2ZhYWRhNzJkMSIsInVzZXJfaWQiOjJ9.2Dhr1Tx4hbyCz2aU5FjFSDnPfn4gpTU1DBAYyz3zBIM\",\n    \"access\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzMDU2ODk0LCJpYXQiOjE3NjMwNTMyOTQsImp0aSI6IjczODg2MjU0NTc4ZjQ2YjlhOGUwYjFlNzkyZjQyYzFmIiwidXNlcl9pZCI6Mn0.LKt-pyPMOt4R-DIKG7M4hasLVSFs-12msC0yyR56i4Y\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Refresh Token (when access expires)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2MzEyMDg0MSwiaWF0IjoxNzYzMDM0NDQxLCJqdGkiOiI5ZDk5ODIyZTkzODg0MTA1Yjc5NjBjZWUzOTI0MDYzNCIsInVzZXJfaWQiOjF9.MaBFNFik48cZbJ_iml0xzDOHQ4W3QLrSbtM0oAn1FCc\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/token/refresh/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						"refresh",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Refresh Token (when access expires)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2MzEyMDg0MSwiaWF0IjoxNzYzMDM0NDQxLCJqdGkiOiI5ZDk5ODIyZTkzODg0MTA1Yjc5NjBjZWUzOTI0MDYzNCIsInVzZXJfaWQiOjF9.MaBFNFik48cZbJ_iml0xzDOHQ4W3QLrSbtM0oAn1FCc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/token/refresh/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								"refresh",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 13 Nov 2025 11:50:16 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "241"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzMDM4MjE2LCJpYXQiOjE3NjMwMzQ0NDEsImp0aSI6ImFiNGVlMDQyOTEwMzRkYTM4ZjE0MDc0NWY2YTE5ZjM1IiwidXNlcl9pZCI6MX0.rJDFIxIZAnDVoYc9fioKwb0srkkZUUKrPaYW4J2EVOA\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Translation Job (Text)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzMDU2ODk0LCJpYXQiOjE3NjMwNTMyOTQsImp0aSI6IjczODg2MjU0NTc4ZjQ2YjlhOGUwYjFlNzkyZjQyYzFmIiwidXNlcl9pZCI6Mn0.LKt-pyPMOt4R-DIKG7M4hasLVSFs-12msC0yyR56i4Y",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"source_text\": \"Hello I am Sumisha PS from Kerala but currently I am in Bangalore\",\n  \"source_lang\": \"en\",\n  \"target_lang\": \"hi\",\n  \"priority\": \"normal\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/translate/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"translate",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Translation Job (Text)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzMDU2ODk0LCJpYXQiOjE3NjMwNTMyOTQsImp0aSI6IjczODg2MjU0NTc4ZjQ2YjlhOGUwYjFlNzkyZjQyYzFmIiwidXNlcl9pZCI6Mn0.LKt-pyPMOt4R-DIKG7M4hasLVSFs-12msC0yyR56i4Y",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"source_text\": \"Hello I am Sumisha PS from Kerala but currently I am in Bangalore\",\n  \"source_lang\": \"en\",\n  \"target_lang\": \"hi\",\n  \"priority\": \"normal\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/translate/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"translate",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 13 Nov 2025 17:13:21 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "185"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"64953890-da23-41da-a2a5-9b461fea5a9d\",\n    \"source_text\": \"Hello I am Sumisha PS from Kerala but currently I am in Bangalore\",\n    \"source_lang\": \"en\",\n    \"target_lang\": \"hi\",\n    \"priority\": \"normal\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Check Translation Job Status",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzMDU2ODk0LCJpYXQiOjE3NjMwNTMyOTQsImp0aSI6IjczODg2MjU0NTc4ZjQ2YjlhOGUwYjFlNzkyZjQyYzFmIiwidXNlcl9pZCI6Mn0.LKt-pyPMOt4R-DIKG7M4hasLVSFs-12msC0yyR56i4Y",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/translate/64953890-da23-41da-a2a5-9b461fea5a9d/status/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"translate",
+						"64953890-da23-41da-a2a5-9b461fea5a9d",
+						"status",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Check Translation Job Status",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzMDU2ODk0LCJpYXQiOjE3NjMwNTMyOTQsImp0aSI6IjczODg2MjU0NTc4ZjQ2YjlhOGUwYjFlNzkyZjQyYzFmIiwidXNlcl9pZCI6Mn0.LKt-pyPMOt4R-DIKG7M4hasLVSFs-12msC0yyR56i4Y",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/translate/64953890-da23-41da-a2a5-9b461fea5a9d/status/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"translate",
+								"64953890-da23-41da-a2a5-9b461fea5a9d",
+								"status",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 13 Nov 2025 17:13:58 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "233"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"64953890-da23-41da-a2a5-9b461fea5a9d\",\n    \"status\": \"completed\",\n    \"priority\": \"normal\",\n    \"created_at\": \"2025-11-13T17:13:21.827306Z\",\n    \"started_at\": \"2025-11-13T17:13:21.838375Z\",\n    \"completed_at\": \"2025-11-13T17:13:23.103021Z\",\n    \"word_count\": 13\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Translated Result",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzMDU2ODk0LCJpYXQiOjE3NjMwNTMyOTQsImp0aSI6IjczODg2MjU0NTc4ZjQ2YjlhOGUwYjFlNzkyZjQyYzFmIiwidXNlcl9pZCI6Mn0.LKt-pyPMOt4R-DIKG7M4hasLVSFs-12msC0yyR56i4Y",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/translate/64953890-da23-41da-a2a5-9b461fea5a9d/result/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"translate",
+						"64953890-da23-41da-a2a5-9b461fea5a9d",
+						"result",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Translated Result",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzMDU2ODk0LCJpYXQiOjE3NjMwNTMyOTQsImp0aSI6IjczODg2MjU0NTc4ZjQ2YjlhOGUwYjFlNzkyZjQyYzFmIiwidXNlcl9pZCI6Mn0.LKt-pyPMOt4R-DIKG7M4hasLVSFs-12msC0yyR56i4Y",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/translate/64953890-da23-41da-a2a5-9b461fea5a9d/result/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"translate",
+								"64953890-da23-41da-a2a5-9b461fea5a9d",
+								"result",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 13 Nov 2025 17:14:17 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "292"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"64953890-da23-41da-a2a5-9b461fea5a9d\",\n    \"status\": \"completed\",\n    \"translated_text\": \"हैलो मैं केरल की सुमिशा पीएस हूं लेकिन वर्तमान में मैं बैंगलोर में हूं\",\n    \"error_message\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Token(Admin)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"admin\",\n  \"password\": \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/token/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Token(Admin)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"admin\",\n  \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/token/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 13 Nov 2025 16:22:36 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "483"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2MzEzNzM1NiwiaWF0IjoxNzYzMDUwOTU2LCJqdGkiOiI0YTg3ZmRhYzg1YTI0M2M0YTBiMzJiODJmZGY5MDEwZCIsInVzZXJfaWQiOjF9.gzGLoymSSpGtiIQUjoFJC7suN65Lq2iGDIUrhReeGPU\",\n    \"access\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzMDU0NTU2LCJpYXQiOjE3NjMwNTA5NTYsImp0aSI6ImM1MmZjN2UzZjJhNzRkN2Y5YTA0NmUyYWRjYjg5MWNhIiwidXNlcl9pZCI6MX0.72UveXEnzYOc6GD_KcVp6_Xxj506kJkoOYl-SzHY09I\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Jobs(Admin)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzMDU0NTU2LCJpYXQiOjE3NjMwNTA5NTYsImp0aSI6ImM1MmZjN2UzZjJhNzRkN2Y5YTA0NmUyYWRjYjg5MWNhIiwidXNlcl9pZCI6MX0.72UveXEnzYOc6GD_KcVp6_Xxj506kJkoOYl-SzHY09I",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/translate/all/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"translate",
+						"all",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Jobs",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzMDU0NTU2LCJpYXQiOjE3NjMwNTA5NTYsImp0aSI6ImM1MmZjN2UzZjJhNzRkN2Y5YTA0NmUyYWRjYjg5MWNhIiwidXNlcl9pZCI6MX0.72UveXEnzYOc6GD_KcVp6_Xxj506kJkoOYl-SzHY09I",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/translate/all/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"translate",
+								"all",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 13 Nov 2025 17:13:31 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "4524"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"64953890-da23-41da-a2a5-9b461fea5a9d\",\n        \"user\": 2,\n        \"source_text\": \"Hello I am Sumisha PS from Kerala but currently I am in Bangalore\",\n        \"translated_text\": \"हैलो मैं केरल की सुमिशा पीएस हूं लेकिन वर्तमान में मैं बैंगलोर में हूं\",\n        \"source_lang\": \"en\",\n        \"target_lang\": \"hi\",\n        \"status\": \"completed\",\n        \"priority\": \"normal\",\n        \"word_count\": 13,\n        \"error_message\": null,\n        \"created_at\": \"2025-11-13T17:13:21.827306Z\",\n        \"started_at\": \"2025-11-13T17:13:21.838375Z\",\n        \"completed_at\": \"2025-11-13T17:13:23.103021Z\"\n    },\n    {\n        \"id\": \"c7b42bdc-8b7d-41d4-a8f1-c333581958a4\",\n        \"user\": 2,\n        \"source_text\": \"Hello I am Sumisha PS from kerala but currently iam in banglore\",\n        \"translated_text\": \"ഹലോ ഞാൻ കേരളത്തിൽ നിന്നുള്ള സുമിഷ പി .എസ്. എന്നാൽ നിലവിൽ ഞാൻ ബാംഗ്ലൂരിലാണ്\",\n        \"source_lang\": \"en\",\n        \"target_lang\": \"ml\",\n        \"status\": \"completed\",\n        \"priority\": \"normal\",\n        \"word_count\": 12,\n        \"error_message\": null,\n        \"created_at\": \"2025-11-13T17:12:25.955360Z\",\n        \"started_at\": \"2025-11-13T17:12:25.966680Z\",\n        \"completed_at\": \"2025-11-13T17:12:26.975339Z\"\n    },\n    {\n        \"id\": \"bf95edea-ee72-4b48-a360-83576defff74\",\n        \"user\": 2,\n        \"source_text\": \"Hello I am Sumisha PS from kerala but currently iam in banglore\",\n        \"translated_text\": null,\n        \"source_lang\": \"en\",\n        \"target_lang\": \"mal\",\n        \"status\": \"failed\",\n        \"priority\": \"normal\",\n        \"word_count\": 12,\n        \"error_message\": \"Translation API returned empty text.\",\n        \"created_at\": \"2025-11-13T17:11:22.803346Z\",\n        \"started_at\": \"2025-11-13T17:11:22.845727Z\",\n        \"completed_at\": \"2025-11-13T17:11:23.684304Z\"\n    },\n    {\n        \"id\": \"21afa440-6f40-4451-9e47-913eee09f0e0\",\n        \"user\": 2,\n        \"source_text\": \"Hello I am Sumisha PS from kerala but currently iam in banglore\",\n        \"translated_text\": \"Bonjour je suis Sumisha PS du kerala mais actuellement iam à banglore\",\n        \"source_lang\": \"en\",\n        \"target_lang\": \"fr\",\n        \"status\": \"completed\",\n        \"priority\": \"normal\",\n        \"word_count\": 12,\n        \"error_message\": null,\n        \"created_at\": \"2025-11-13T17:09:05.592627Z\",\n        \"started_at\": \"2025-11-13T17:09:05.674114Z\",\n        \"completed_at\": \"2025-11-13T17:09:10.256760Z\"\n    },\n    {\n        \"id\": \"9aa19202-48b6-4c16-bac7-11f96f5bddae\",\n        \"user\": 2,\n        \"source_text\": \"Hello iam sumisha ps from banglore\",\n        \"translated_text\": null,\n        \"source_lang\": \"en\",\n        \"target_lang\": \"fr\",\n        \"status\": \"failed\",\n        \"priority\": \"normal\",\n        \"word_count\": 6,\n        \"error_message\": \"'coroutine' object has no attribute 'text'\",\n        \"created_at\": \"2025-11-13T17:01:56.670649Z\",\n        \"started_at\": \"2025-11-13T17:01:56.730132Z\",\n        \"completed_at\": null\n    },\n    {\n        \"id\": \"b367697b-b9e8-4245-9638-8e25f424f365\",\n        \"user\": 2,\n        \"source_text\": \"Hello iam sumisha ps from banglore\",\n        \"translated_text\": null,\n        \"source_lang\": \"en\",\n        \"target_lang\": \"fr\",\n        \"status\": \"pending\",\n        \"priority\": \"normal\",\n        \"word_count\": 6,\n        \"error_message\": null,\n        \"created_at\": \"2025-11-13T16:59:31.875958Z\",\n        \"started_at\": null,\n        \"completed_at\": null\n    },\n    {\n        \"id\": \"c82e0077-b758-4d2c-b8a7-7a2cdbb77c78\",\n        \"user\": 2,\n        \"source_text\": \"Hello iam sumisha ps from kerala\",\n        \"translated_text\": null,\n        \"source_lang\": \"en\",\n        \"target_lang\": \"fr\",\n        \"status\": \"failed\",\n        \"priority\": \"high\",\n        \"word_count\": 6,\n        \"error_message\": \"'coroutine' object has no attribute 'text'\",\n        \"created_at\": \"2025-11-13T16:57:30.834252Z\",\n        \"started_at\": \"2025-11-13T16:57:30.896525Z\",\n        \"completed_at\": null\n    },\n    {\n        \"id\": \"01196741-327f-45bc-a807-7b8600eb6c5c\",\n        \"user\": 2,\n        \"source_text\": \"Hello iam sumisha ps from kerala\",\n        \"translated_text\": null,\n        \"source_lang\": \"en\",\n        \"target_lang\": \"fr\",\n        \"status\": \"failed\",\n        \"priority\": \"high\",\n        \"word_count\": 6,\n        \"error_message\": \"'coroutine' object has no attribute 'text'\",\n        \"created_at\": \"2025-11-13T16:51:49.055803Z\",\n        \"started_at\": \"2025-11-13T16:51:49.141341Z\",\n        \"completed_at\": null\n    },\n    {\n        \"id\": \"eb322074-34d9-41f8-bba9-6020acf71bfc\",\n        \"user\": 2,\n        \"source_text\": \"Hello world\",\n        \"translated_text\": null,\n        \"source_lang\": \"en\",\n        \"target_lang\": \"fr\",\n        \"status\": \"completed\",\n        \"priority\": \"normal\",\n        \"word_count\": 2,\n        \"error_message\": null,\n        \"created_at\": \"2025-11-13T16:02:07.763700Z\",\n        \"started_at\": null,\n        \"completed_at\": \"2025-11-13T16:26:56.095515Z\"\n    },\n    {\n        \"id\": \"511efe24-cdf7-49b6-bd06-e6b0e4e75c31\",\n        \"user\": 1,\n        \"source_text\": null,\n        \"translated_text\": null,\n        \"source_lang\": \"en\",\n        \"target_lang\": \"fr\",\n        \"status\": \"pending\",\n        \"priority\": \"normal\",\n        \"word_count\": 0,\n        \"error_message\": null,\n        \"created_at\": \"2025-11-13T11:59:45.116893Z\",\n        \"started_at\": null,\n        \"completed_at\": null\n    },\n    {\n        \"id\": \"2a6296c1-27e8-4a61-b8e9-c0c539cab284\",\n        \"user\": 1,\n        \"source_text\": \"Hello world this is a translation job test\",\n        \"translated_text\": null,\n        \"source_lang\": \"en\",\n        \"target_lang\": \"fr\",\n        \"status\": \"pending\",\n        \"priority\": \"high\",\n        \"word_count\": 8,\n        \"error_message\": null,\n        \"created_at\": \"2025-11-13T11:54:17.004111Z\",\n        \"started_at\": null,\n        \"completed_at\": null\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Update Job Status(Admin)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzMDU0NTU2LCJpYXQiOjE3NjMwNTA5NTYsImp0aSI6ImM1MmZjN2UzZjJhNzRkN2Y5YTA0NmUyYWRjYjg5MWNhIiwidXNlcl9pZCI6MX0.72UveXEnzYOc6GD_KcVp6_Xxj506kJkoOYl-SzHY09I",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"status\": \"failed\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/translate/eb322074-34d9-41f8-bba9-6020acf71bfc/admin-update/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"translate",
+						"eb322074-34d9-41f8-bba9-6020acf71bfc",
+						"admin-update",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Job Status",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzMDU0NTU2LCJpYXQiOjE3NjMwNTA5NTYsImp0aSI6ImM1MmZjN2UzZjJhNzRkN2Y5YTA0NmUyYWRjYjg5MWNhIiwidXNlcl9pZCI6MX0.72UveXEnzYOc6GD_KcVp6_Xxj506kJkoOYl-SzHY09I",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"status\": \"failed\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/translate/eb322074-34d9-41f8-bba9-6020acf71bfc/admin-update/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"translate",
+								"eb322074-34d9-41f8-bba9-6020acf71bfc",
+								"admin-update",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 13 Nov 2025 17:18:21 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "PATCH, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Job status updated to failed\"\n}"
+				}
+			]
+		}
+	]
+}
