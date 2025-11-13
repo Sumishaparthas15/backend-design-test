@@ -29,3 +29,21 @@ https://github.com/Sumishaparthas15/backend-design-test.git
 cd low_level_design 
 
 
+
+## Components
+- **API Layer (Django REST Framework)** — handles job creation, status, and result fetching.
+- **Database (PostgreSQL)** — stores job metadata, queue info, and statuses.
+- **Worker Layer (Celery/Redis)** — processes queued translations asynchronously.
+- **Autoscaler** — dynamically adjusts worker instances based on queue length.
+
+## Files
+- `api_spec.md` — REST API definitions
+- `db_schema.sql` — database schema
+- `pseudocode.md` — queue & scaling pseudocode
+
+
+
+
+
+POSTMAN 
+https://documenter.getpostman.com/view/33255970/2sB3WvMdEe
