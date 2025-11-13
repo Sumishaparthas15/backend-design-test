@@ -25,3 +25,22 @@ class TranslationJobResultSerializer(serializers.ModelSerializer):
     class Meta:
         model = TranslationJob
         fields = ['id', 'status', 'translated_text', 'error_message']
+
+class TranslationJobAdminSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TranslationJob
+        fields = [
+            'id',
+            'user',
+            'source_text',
+            'translated_text',
+            'source_lang',
+            'target_lang',
+            'status',
+            'priority',
+            'word_count',
+            'error_message',
+            'created_at',
+            'started_at',
+            'completed_at',
+        ]

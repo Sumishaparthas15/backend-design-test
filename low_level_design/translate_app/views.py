@@ -4,11 +4,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from .models import TranslationJob
-from .serializers import (
-    TranslationJobCreateSerializer,
-    TranslationJobStatusSerializer,
-    TranslationJobResultSerializer,
-)
+from .serializers import *
 from .tasks import enqueue_translation_job
 
 
@@ -20,8 +16,7 @@ class TranslationCreateView(generics.CreateAPIView):
 
     def perform_create(self, serializer):
         job = serializer.save(user=self.request.user)
-        enqueue_translation_job.delay(str(job.id))  # Celery async
-        return job
+        enqueue_translation_job.delay(str(job.id)) 
 
 
 # --- Get Job Status
@@ -43,8 +38,9 @@ class TranslationResultView(generics.RetrieveAPIView):
 # --- Get All Jobs (Admin only)
 class TranslationListAllView(generics.ListAPIView):
     permission_classes = [permissions.IsAdminUser]
-    serializer_class = TranslationJobStatusSerializer
+    serializer_class = TranslationJobAdminSerializer
     queryset = TranslationJob.objects.all().order_by('-created_at')
+
 
 
 # --- Admin or Worker updates job status
@@ -65,3 +61,4 @@ def admin_update_job_status(request, id):
 
     job.save()
     return Response({"message": f"Job status updated to {new_status}"}, status=status.HTTP_200_OK)
+
