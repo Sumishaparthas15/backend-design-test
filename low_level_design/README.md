@@ -22,7 +22,7 @@ It supports **JWT authentication**, **rate limiting**, and **request validation*
 
 ## ⚙️ Setup
 
-### 1. Clone Repository
+###  Clone Repository
 
 ```bash
 https://github.com/Sumishaparthas15/backend-design-test.git
