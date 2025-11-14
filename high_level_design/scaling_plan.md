@@ -26,3 +26,5 @@ How the system handles more users : horizontal and vertical.
     Users can submit many large texts at the same time.
         1: without scaling : API may slow down or return errors ,Celery queue may get too long.
         2: With proper scaling: Many users are handled smoothly,translation jobs are processed quickly and reliably.
+
+
